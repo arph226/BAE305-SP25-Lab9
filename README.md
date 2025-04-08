@@ -16,6 +16,44 @@
 
 # Assembly Procedures 
 
+## Part 1: PID Use
+
+1. First, we opened Arduino IDE and isntalled the PID_V2 Library by opening library manager and searching for PID_V2. We installed the latest library by Brett Beauregard.
+2. Next, we made the following modifications to our robot sketch:
+
+a. We included the library in the code using this function:
+```ruby
+#include <PID_V2>
+```
+
+b. Next, we defined the setpoint, measurement, output, kp, ki, and kd varoables as type double using the lines of code below:
+```ruby
+// PID Variables
+double setpoint = 20.0;  // Desired distance from the object (cm)
+double measurement = 0.0;
+double output = 0.0;
+
+// PID tuning parameters (adjust these for best performance)
+double Kp = 10.0, Ki =0.0, Kd = 0.0;
+```
+
+c. Next, we added this line of code before the setup function to create the PID instance: 
+```ruby
+PID myPID(&measurement, &output, &setpoint, Kp, Ki, Kd, DIRECT);
+```
+
+d. Then, we initialized the PID within the setup function as shown below: 
+```ruby
+ myPID.SetTunings(Kp, Ki, Kd);
+    myPID.SetMode(AUTOMATIC);
+```
+
+e. Next, we added the following line within the loop section of the code to compute the output of the PID according to the tuning and inputs and write the output to its pointer: 
+
+```ruby
+myPID.Compute();
+```
+
 
 # Test Equipment
 
