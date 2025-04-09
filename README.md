@@ -19,8 +19,12 @@ This lab introduced us to PID (Proportional-Integral-Derivative) control by usin
 
 ## Part 1: PID Use
 
-1. First, we opened Arduino IDE and installed the PID_V2 Library by opening the library manager and searching for PID_V2. We installed the latest library by Brett Beauregard.
-2. Next, we made the following modifications to our robot sketch:
+1. For this lab, we used the robot that we constructed in lab 8. The methods we used to build the robot are described in the report for lab 8, which is linked below.
+
+   
+2. First, we opened Arduino IDE and installed the PID_V2 Library by opening the library manager and searching for PID_V2. We installed the latest library by Brett Beauregard.
+  
+3. Next, we made the following modifications to our robot sketch:
 
 a. We included the library in the code using this function:
 ```ruby
