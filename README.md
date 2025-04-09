@@ -21,6 +21,7 @@ This lab introduced us to PID (Proportional-Integral-Derivative) control by usin
 
 1. For this lab, we used the robot that we constructed in lab 8. The methods we used to build the robot are described in the report for lab 8, which is linked below.
 
+https://github.com/arph226/BAE305-SP25-Lab8
    
 2. First, we opened Arduino IDE and installed the PID_V2 Library by opening the library manager and searching for PID_V2. We installed the latest library by Brett Beauregard.
   
