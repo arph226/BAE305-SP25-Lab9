@@ -8,7 +8,7 @@
 
 # Summary  
 
-
+This lab introduced us to PID (Proportional-Integral-Derivative) control by using an ultrasonic sensor and DC motors to maintain a set distance between a robot and an obstacle. We implemented the PID_V2 library in Arduino, configured tuning parameters (Kp, Ki, Kd), and wrote code to compute the PID output based on the distance error between the measured value and a target setpoint. The output was used to drive the robot forward or backward, with speed adjusted according to the magnitude of the error. Through tuning and testing, we observed how the controller responded to distance changes in real time, reinforcing our understanding of feedback control, sensor integration, and actuator response in mobile robotics.
 
 # Materials
 
