@@ -232,8 +232,11 @@ void leftMotor(int motorSpeed) {
 
 # Discussion
 
+During testing, we found that the robot was able to respond dynamically to changes in distance, moving forward or backward to maintain the setpoint. Higher values of Kp made the robot react more quickly, but too high caused overshooting and oscillations. Adding Ki helped correct steady-state error, but too much made the system unstable. Kd smoothed out the response by dampening rapid changes. We also noticed that the robot required a minimum motor speed (around 70–75) to overcome static friction and begin moving. Overall, tuning the PID parameters was key to achieving stable and accurate distance control.
 
 
 # Conclusion
+
+This lab provided hands-on experience with implementing a PID feedback control system using the Arduino platform. By integrating an ultrasonic sensor and motor driver with a mobile robot, we created a system that could maintain a set distance from an object through continuous adjustment based on real-time sensor input. We explored how proportional, integral, and derivative gains affect system behavior, tuning each parameter to improve responsiveness and stability. Our results highlighted the importance of careful tuning to prevent overshoot and ensure reliable performance. This lab reinforced key concepts in control systems and sensor-based decision-making, preparing us for more advanced autonomous robotics applications.
 
 
