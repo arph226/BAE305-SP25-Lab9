@@ -228,7 +228,7 @@ void leftMotor(int motorSpeed) {
 ```
 <p align="left"><em> Program 1: The above program demonstrates the use of a proportional-integral-derivative (PID) controller to maintain the distance from the robot to an object at 20.0 cm. It does this by communicating with an ultrasonic sensor which reads measurements continuously. This is then turned into a corrective output mapped into motor speed and direction. The code was fine-tuned using kp, ki, and kd. Kp reacts to the current error, Ki accounts for past errors, and Kd predicts future errors. Our Kp is set to 10, and our Ki and Kd are set to zero, meaning they are inactive. We can adjust the Ki and Kd to fine-tune the movement further and prevent overshooting oscillations.   </em></p>
 
-[![Watch the demo video][[(https://youtu.be/Epu5O5bbB-A)])]]
+[Watch the demo video](https://youtu.be/Epu5O5bbB-A)
 
 
 
