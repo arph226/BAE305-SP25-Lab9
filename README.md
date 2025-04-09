@@ -19,7 +19,7 @@ This lab introduced us to PID (Proportional-Integral-Derivative) control by usin
 
 ## Part 1: PID Use
 
-1. First, we opened Arduino IDE and isntalled the PID_V2 Library by opening library manager and searching for PID_V2. We installed the latest library by Brett Beauregard.
+1. First, we opened Arduino IDE and installed the PID_V2 Library by opening the library manager and searching for PID_V2. We installed the latest library by Brett Beauregard.
 2. Next, we made the following modifications to our robot sketch:
 
 a. We included the library in the code using this function:
@@ -27,7 +27,7 @@ a. We included the library in the code using this function:
 #include <PID_V2>
 ```
 
-b. Next, we defined the setpoint, measurement, output, kp, ki, and kd varoables as type double using the lines of code below:
+b. Next, we defined the setpoint, measurement, output, kp, ki, and kd variables as type double using the lines of code below:
 ```ruby
 // PID Variables
 double setpoint = 20.0;  // Desired distance from the object (cm)
@@ -74,7 +74,7 @@ void moveRobot(double pidOutput) {
 }
 ```
 
-2. After step 1, the robot was oscillating about the setpoint. We modified Kp, Ki, and Kd to mimimize the error in the system.
+2. After step 1, the robot was oscillating about the setpoint. We modified Kp, Ki, and Kd to minimize the error in the system.
 
 ## Part 3: Wall Follower
 
@@ -89,11 +89,11 @@ We were unable to complete part 3 of the lab because it was impossible to attach
 
 ## Part 1: PID Use
 
-To test the modifications made to our Arduino sketch, we wrote the setpoint, measurement, and output values to the serial port. We read the measurement displayed in the serial moniter (the sistance from the sensor) to ensure that it was reaching the setpoint. We ensured that the output (the motors) responded when the measurement was off from  the setpoint, and we made sure that the behavior was stable. Physically, we used various objects to ensure that the distance the sensor was reading was correct and the speed of the robot wa changing based on this distance. 
+To test the modifications made to our Arduino sketch, we wrote the setpoint, measurement, and output values to the serial port. We read the measurement displayed in the serial monitor (the distance from the sensor) to ensure that it was reaching the setpoint. We ensured that the output (the motors) responded when the measurement was off from  the setpoint, and we made sure that the behavior was stable. Physically, we used various objects to ensure that the distance the sensor was reading was correct and the speed of the robot was changing based on this distance. 
 
 ## Part 2: Keep Your Distance
 
-To test our modifications to our sketch in this step, we used various objects (an ipad with a black case was most successful) to ensure that the robot was moving forward and backward to keep the set distance between itself and the object. Initially, the robot was oscillating heavily around the setpoint, so we altered the Kp, Ki, and Kd values to mimimize the error in the function, which mimimized oscillation. 
+To test our modifications to our sketch in this step, we used various objects (an iPad with a black case was the most successful) to ensure that the robot was moving forward and backward to keep the set distance between itself and the object. Initially, the robot was oscillating heavily around the setpoint, so we altered the Kp, Ki, and Kd values to minimize the error in the function, which minimized oscillation. 
 
 
 # Test Results
@@ -226,13 +226,13 @@ void leftMotor(int motorSpeed) {
 
 
 ```
-<p align="left"><em> Program 1: The above program demonstrates the use of a proportional-integral-derivative (PID) controller to maintain the disrtance from the robot to an object at 20.0 cm. It does this by communicating with an ultrasonic sensor which reads measurements continuously. This is then turned into a corrective output mapped into motor speed and direction. The code was fine tuned using kp, ki, and kd. Kp reacts to the current error, Ki accounts for past errors, and Kd predicts future errors. Our Kp is set to 10 and our Ki and Kd are set to zero meaning they are inactive. We can adjust the Ki and Kd to fine tune the movement further and prevent overshooting oscillations.   </em></p>
+<p align="left"><em> Program 1: The above program demonstrates the use of a proportional-integral-derivative (PID) controller to maintain the distance from the robot to an object at 20.0 cm. It does this by communicating with an ultrasonic sensor which reads measurements continuously. This is then turned into a corrective output mapped into motor speed and direction. The code was fine-tuned using kp, ki, and kd. Kp reacts to the current error, Ki accounts for past errors, and Kd predicts future errors. Our Kp is set to 10, and our Ki and Kd are set to zero, meaning they are inactive. We can adjust the Ki and Kd to fine-tune the movement further and prevent overshooting oscillations.   </em></p>
 
 
 
 # Discussion
 
-During testing, we found that the robot was able to respond dynamically to changes in distance, moving forward or backward to maintain the setpoint. Higher values of Kp made the robot react more quickly, but too high caused overshooting and oscillations. Adding Ki helped correct steady-state error, but too much made the system unstable. Kd smoothed out the response by dampening rapid changes. We also noticed that the robot required a minimum motor speed (around 70–75) to overcome static friction and begin moving. Overall, tuning the PID parameters was key to achieving stable and accurate distance control.
+During testing, we found that the robot was able to respond dynamically to changes in distance, moving forward or backward to maintain the setpoint. Initially, we had trouble as our robot was moving away from the barrier (our laptop) and didn't follow the barrier when it moved back. We were able to remedy this by fixing our code logic to make the robot move backward in response to negative error. Looking further at our code, higher values of Kp made the robot react more quickly, but too high caused overshooting and oscillations. Adding Ki helped correct the steady-state error, but too much made the system unstable. Kd smoothed out the response by dampening rapid changes. We also noticed that the robot required a minimum motor speed (around 70–75) to overcome static friction and begin moving. Overall, tuning the PID parameters was key to achieving stable and accurate distance control.
 
 
 # Conclusion
