@@ -12,7 +12,8 @@
 
 # Materials
 
-
+* Computer running Arduino IDE and Chrome Browser
+* SparkFun Inventor's kit: RedBoard, ultrasonic sensor, two motors, and motor driver
 
 # Assembly Procedures 
 
@@ -73,19 +74,26 @@ void moveRobot(double pidOutput) {
 }
 ```
 
-2. After step 1, the robot was oscillating about the setpoint. We modified Kp, Ki, and Kd to mimimize the error in the system. 
+2. After step 1, the robot was oscillating about the setpoint. We modified Kp, Ki, and Kd to mimimize the error in the system.
 
+## Part 3: Wall Follower
 
+We were unable to complete part 3 of the lab because it was impossible to attach the sensor in the way that this step required. To be able to sense the wall, our robot had to be facing the wall, which would make it impossible to move sideways along the wall. 
 
 # Test Equipment
 
+* Computer running Arduino IDE
+* Assembled robot 
 
 # Test Procedures
 
 ## Part 1: PID Use
 
+To test the modifications made to our Arduino sketch, we wrote the setpoint, measurement, and output values to the serial port. We read the measurement displayed in the serial moniter (the sistance from the sensor) to ensure that it was reaching the setpoint. We ensured that the output (the motors) responded when the measurement was off from  the setpoint, and we made sure that the behavior was stable. Physically, we used various objects to ensure that the distance the sensor was reading was correct and the speed of the robot wa changing based on this distance. 
+
 ## Part 2: Keep Your Distance
 
+To test our modifications to our sketch in this step, we used various objects (an ipad with a black case was most successful) to ensure that the robot was moving forward and backward to keep the set distance between itself and the object. Initially, the robot was oscillating heavily around the setpoint, so we altered the Kp, Ki, and Kd values to mimimize the error in the function, which mimimized oscillation. 
 
 
 # Test Results
