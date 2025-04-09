@@ -54,6 +54,28 @@ e. Next, we added the following line within the loop section of the code to comp
 myPID.Compute();
 ```
 
+## Part 2: Keep Your Distance 
+
+1. Next, we wrote a function to tell the robot to move back or forward depending on the measured distance. We implemented a function that obtained the distance output from the PID library (from 0 to 255) and told the robot to move forward or backward with a fast or slow speed depending on the sensed distance. The following function was used to move the robot based on the PID output:
+```ruby
+void moveRobot(double pidOutput) {
+    int speed = map(abs(pidOutput), 0, 200, 70, 225); // Scale speed
+
+    if (pidOutput > 0) {
+        // Move forward
+        rightMotor(speed);
+        leftMotor(-speed);
+    } else {
+        // Move backward
+        rightMotor(-speed);
+        leftMotor(speed);
+    }
+}
+```
+
+2. After step 1, the robot was oscillating about the setpoint. We modified Kp, Ki, and Kd to mimimize the error in the system. 
+
+
 
 # Test Equipment
 
